@@ -1,0 +1,28 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" lang="es"  >
+
+<head th:replace="layout::head"></head>
+
+<body>
+    <header th:replace="layout::header"></header>
+
+    <div class="container p-3">
+        <h1>Artículo</h1>
+        <form th:object="${articulo}">
+            <input type="hidden" th:field="*{id}">
+            <div class="mb-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" th:field="*{nombre}" disabled>
+            </div>
+            <div class="mb-4">
+                <label for="precio" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="precio" th:field="*{precio}" value="0" disabled>
+            </div>
+            <a href="/articulos" class="btn btn-success">Aceptar</a>
+        </form>
+    </div>
+
+
+    <footer th:replace="layout::footer"></footer>
+</body>
+</html>
